@@ -20,7 +20,7 @@ const Button = () => {
 
   return (
     <div>
-      {/* <button onClick={(e) => handleClick(e)}>change</button> */}
+      <button onClick={(e) => handleClick(e)}>change</button>
       <button style={{ backgroundColor: `${btn}` }} onClick={handleClicktwo}>
         change
       </button>
