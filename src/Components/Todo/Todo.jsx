@@ -13,17 +13,26 @@ const Todo = () => {
     setData([...data, payload]);
   };
   const handleToggle = (id) => {
-    console.log(id);
     const updatedtodo = data.map((each, idx) =>
       idx === id ? { ...each, status: !each.status } : each
     );
+    setData(updatedtodo);
+  };
+  const handleDelete = (id) => {
+    let updatedtodo = data.filter((each, idx) => idx !== id);
     setData(updatedtodo);
   };
   return (
     <div>
       <Todoinput handleAdd={handleAdd} />
       {data.map((each, id) => (
-        <Todolist {...each} key={id} id={id} handletoggle={handleToggle} />
+        <Todolist
+          {...each}
+          key={id}
+          id={id}
+          handletoggle={handleToggle}
+          handleDelete={handleDelete}
+        />
       ))}
     </div>
   );
