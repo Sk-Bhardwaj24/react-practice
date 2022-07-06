@@ -1,4 +1,5 @@
 import React from "react";
+import Timer from "../Timer";
 
 import Todoinput from "./Todoinput";
 import Todolist from "./Todolist";
@@ -24,6 +25,7 @@ const Todo = () => {
   };
   return (
     <div>
+      <Timer />
       <Todoinput handleAdd={handleAdd} />
       {data.map((each, id) => (
         <Todolist
